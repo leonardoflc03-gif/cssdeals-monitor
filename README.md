@@ -14,29 +14,7 @@ O site carrega os produtos de uma API pública (`cssdeals.com/api/product`). Cad
 
 ---
 
-## Passo 1 — Criar o bot do Telegram (5 min)
 
-1. No Telegram, abra o **@BotFather** → envie `/newbot` → escolha um nome e um usuário (ex.: `cssdeals_leo_bot`).
-2. Ele te dá um **token** tipo `7412345678:AAH...`. Guarde.
-3. Abra a conversa com o seu bot novo e mande **qualquer mensagem** (ex.: "oi").
-4. No navegador, abra: `https://api.telegram.org/bot<SEU_TOKEN>/getUpdates`
-   Procure `"chat":{"id":123456789` — esse número é o seu **chat ID**.
-
-> Quer receber num grupo com amigos? Adicione o bot ao grupo, mande uma mensagem lá e pegue o ID (vai ser negativo, tipo `-100...`).
-
-## Passo 2 — Colocar no GitHub (roda na nuvem, de graça)
-
-1. Crie uma conta em github.com (se não tiver).
-2. **New repository** → nome `cssdeals-monitor` → marque **Public** → Create.
-   *(Público é importante: repositório público tem minutos de Actions ilimitados. O token fica protegido nos Secrets, ninguém vê.)*
-3. Clique em **uploading an existing file** e arraste **todo o conteúdo desta pasta**, incluindo a pasta `.github`.
-   - Se o navegador não mostrar a pasta `.github` (no Mac ela fica oculta: `Cmd + Shift + .`), crie pelo site: **Add file → Create new file** → nome `.github/workflows/monitor.yml` → cole o conteúdo.
-4. Vá em **Settings → Secrets and variables → Actions → New repository secret** e crie:
-   - `TELEGRAM_TOKEN` = o token do BotFather
-   - `TELEGRAM_CHAT_ID` = seu chat ID
-5. Aba **Actions** → se pedir, clique em "I understand… enable them" → escolha **Monitor CSSDeals** → **Run workflow**.
-
-Em ~2 minutos você recebe "✅ Monitor do CSSDeals ativo!". Pronto — a partir daí ele roda sozinho a cada 5 minutos.
 
 ## Filtros (opcional)
 
